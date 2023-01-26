@@ -6,7 +6,7 @@ const CheckBox = ({field_id,field_label,field_value,field_type,field_selected}:a
 //   console.log(field_id);
   return (
     <div>
-        <Form.Check inline type={field_type}  value={field_label} label={field_label} onChange={(event)=> handleChange(field_id, event)} />
+        <Form.Check inline type={field_type} checked={field_selected} value={field_label} label={field_label} onChange={(event)=> handleChange(field_id, event)} />
     </div>
   )
 }

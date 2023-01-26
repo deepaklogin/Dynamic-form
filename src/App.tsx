@@ -37,7 +37,7 @@ function App() {
           console.log(event.target.checked)
           var checkedArray: any = []
           if (event.target.checked) {
-            element['field_value'] = event.target.value;
+            element['selected'] = true;
             // const valueis = [...currentPageData.questionoption]
             // console.log(valueis)
 
@@ -48,7 +48,7 @@ function App() {
           }
           else {
             // const valueis = [...currentPageData.questionoption]
-            element['field_value'] = "";
+            element['selected'] = false;
             currentPageData.questionoption.forEach((data: any) => {
               checkedArray.push(data.field_value);
             })
