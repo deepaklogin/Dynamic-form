@@ -38,6 +38,7 @@ function App() {
           var checkedArray: any = []
           if (event.target.checked) {
             element['selected'] = true;
+            element['field_value'] = event.target.value;
             // const valueis = [...currentPageData.questionoption]
             // console.log(valueis)
 
@@ -49,10 +50,11 @@ function App() {
           else {
             // const valueis = [...currentPageData.questionoption]
             element['selected'] = false;
+            element['field_value'] = "";
             currentPageData.questionoption.forEach((data: any) => {
               checkedArray.push(data.field_value);
             })
-
+            console.log(checkedArray);
             setElements(prevValue => ({ ...prevValue, [currentPageData.question]: checkedArray }));
           }
         }
