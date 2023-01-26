@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import {Form} from 'react-bootstrap';
 import { FormContext } from '../FormContext';
 const InputField = ({field_id,field_label,field_value,field_type,field_selected}:any) => {
-  // console.log(field_value)
   const { handleChange }:any = useContext(FormContext);
 
   return (

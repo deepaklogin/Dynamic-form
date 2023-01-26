@@ -26,39 +26,30 @@ function App() {
   const handleChange = (id: any, event: any) => {
     setShowResult(false)
     currentPageData.questionoption.forEach((element: any, i: any) => {
-      // console.log(id , currentPageData.questionoption.que)
       if (currentPageData.questiontype !== 'Checkbox') {
         element['field_value'] = event.target.value;
         setElements(prevValue => ({ ...prevValue, [currentPageData.question]: event.target.value }));
       }
       else {
-        // console.log("hello");
         if (id === currentPageData.questionoption[i].optionid) {
-          console.log(event.target.checked)
           var checkedArray: any = []
           if (event.target.checked) {
             element['selected'] = true;
             element['field_value'] = event.target.value;
-            // const valueis = [...currentPageData.questionoption]
-            // console.log(valueis)
-
             currentPageData.questionoption.forEach((data: any) => {
               checkedArray.push(data.field_value);
             })
             setElements(prevValue => ({ ...prevValue, [currentPageData.question]: checkedArray }));
           }
           else {
-            // const valueis = [...currentPageData.questionoption]
             element['selected'] = false;
             element['field_value'] = "";
             currentPageData.questionoption.forEach((data: any) => {
               checkedArray.push(data.field_value);
             })
-            console.log(checkedArray);
             setElements(prevValue => ({ ...prevValue, [currentPageData.question]: checkedArray }));
           }
         }
-        // console.log(currentPageData)
       }
 
     });
